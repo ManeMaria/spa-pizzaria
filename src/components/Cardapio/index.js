@@ -1,63 +1,21 @@
 import React, {useState} from 'react';
-import styled from 'styled-components';
-import { Container, Content, Images } from './styles';
-import arrow from '../../assets/icons/white-arrow-48.png';
+import { nanoid } from 'nanoid';
+import { Container, Content, ContentItens, Images } from './styles';
+import Arrows from '../Arrows';
 
-const Arrow = ({ direction, handleClick, arrows = true }) => {
-   
-    //component de estilo das setas
-    const ContainerArrow = styled.div`
-         display: ${arrows === true ? 'flex' : 'none'};
-         position: absolute;
-         top: 45%;
-         ${ direction === 'right' ? 'right: 25px' : 'left: 25px'};
-         height: 45px;
-         width: 45px;
-         justify-content: center;
-         background: rgba( 217, 82, 4, 0.5 );
-         border-radius: 50%;
-         cursor: pointer;
-         align-items: center;
-         transition: background transform ease-in 0.1s;
-         transform: rotate(${ direction === 'right' ? '-90deg' : '90deg' });
-         &:hover{
-            transform: scale(1.1) rotate(${ direction === 'right' ? '-90deg' : '90deg' });
-            background: rgba( 217, 82, 4, 0.9 );
-             //transform: rotate(${ direction === 'right' ? '-90deg' : '90deg' });
-         }
-         img{
-             transform: translateX(${ direction === 'left' ? '-2' : '2' }px);
-             transition: transform ease-in 0.5s;
-             height: 80%;
-                width: 80%;
-             &:focus{
-                 outline: none;
-             }
-         }
-     `;
-     
-     return (
-        <ContainerArrow onClick={ handleClick } >
-             {
-                 direction === 'right' ? 
-                 <img src={arrow} alt= 'mover para direita'/> :
-                 <img src={arrow} alt= 'mover para esquerda'/>
-             }
-        </ContainerArrow>
-     )
- };
 
 function Cardapio({cardapio}) {
     const cardapioList = [...cardapio];
+    const key = ()=> nanoid();
     const [ translateAndTransitions, setTranslateAndTransitions ] = useState({
         activeIndex: 0,
         translate: 0,
-        transition: 1,
+        transition: 0.5,
     });
     
-    const { activeIndex, translate, transition, } = translateAndTransitions;
+    const { activeIndex, translate, transition} = translateAndTransitions;
     //guardei no state e separei para ficar mais legível;
-
+   
     const prevSlide = () => { 
         if(activeIndex === 0 ){
             return setTranslateAndTransitions({
@@ -89,21 +47,38 @@ function Cardapio({cardapio}) {
             translate: (activeIndex + 1) * 180,
         })
      };
-     
+    
   return (
-    <Container>
+   <Container>
+        <Content
+        translate = {translate}
+        transition = {transition}
+    >
        
             {cardapioList.map( item =>(
-                <Content key = {item.id}>
+                <ContentItens 
+                    key = {`${item.id}_${key()}`}
+                    
+                >
                    <Images src= {item.image} alt= 'cardapio do dia'/>
                     <button type = 'button'>
                         <p>{item.tipoDoPrato}</p>
                     </button>
-                </Content>
+                </ContentItens>
             ))}
-        <Arrow direction={"right"} handleClick={prevSlide}/>
-        <Arrow direction={"left"} handleClick={nextSlide} />
-    </Container>
+        
+    </Content>
+    <Arrows 
+            direction={"right"}
+             handleClick={prevSlide}
+             top = {35}
+         />
+        <Arrows 
+            direction={"left"} 
+            handleClick={nextSlide} 
+            top = {35}
+         />
+   </Container>
   )
 }
 

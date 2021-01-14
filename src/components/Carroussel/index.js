@@ -1,53 +1,15 @@
 import React,{useState, useEffect, useRef} from 'react';
+import { nanoid } from 'nanoid'
 import { Container, ContentCarroussel, Slide } from './styles';
-import styled from 'styled-components';
-import arrow from '../../assets/icons/white-arrow-48.png';
+import Arrows from '../Arrows';
 
-const Arrow = ({ direction, handleClick, arrows}) => {
+
+
+function Carroussel({images, arrow, autoPlay }) {
    
-   //component de estilo das setas
-   const ContainerArrow = styled.div`
-        display: ${arrows === true ? 'flex' : 'none'};
-        position: absolute;
-        top: 50%;
-        ${ direction === 'right' ? 'right: 25px' : 'left: 25px'};
-        height: 55px;
-        width: 55px;
-        justify-content: center;
-        background: rgba( 0, 0, 0, 0.5 );
-        border-radius: 50%;
-        cursor: pointer;
-        align-items: center;
-        transition: transform ease-in 0.1s;
-        transform: rotate(${ direction === 'right' ? '-90deg' : '90deg' });
-        &:hover{
-           transform: scale(1.1), rotate(${ direction === 'right' ? '-90deg' : '90deg' });;
-            //transform: rotate(${ direction === 'right' ? '-90deg' : '90deg' });
-        }
-        img{
-            transform: translateX(${ direction === 'left' ? '-2' : '2' }px);
-            transition: transform ease-in 0.5s;
-            &:focus{
-                outline: none;
-            }
-        }
-    `;
-    
-    return (
-       <ContainerArrow onClick={ handleClick } >
-            {
-                direction === 'right' ? 
-                <img src={arrow} alt= 'mover para direita'/> :
-                <img src={arrow} alt= 'mover para esquerda'/>
-            }
-       </ContainerArrow>
-    )
-};
-
-function Carroussel({images, arrows = true, autoPlay }) {
-    const autoPLayPermission = autoPlay === true ? 2 : 'undefine';
     const getWidth = () => window.innerWidth; // diz o tamanho da tela do cliente;
     const imagesList = [...images];
+    const key = ()=> nanoid();
     //desestruturei para preservar o arr original.
 
     const autoPlayRef = useRef();
@@ -60,18 +22,17 @@ function Carroussel({images, arrows = true, autoPlay }) {
     
     useEffect(() => {
         const play = () => {
-          autoPlayRef.current()
-          console.log(autoPlayRef.current())
+          autoPlayRef.current();
         }
     
-        const interval = setInterval(play,( autoPLayPermission * 1000))
+        const interval = setInterval(play,( autoPlay * 1000))
         return () => clearInterval(interval)
-      }, []);
+      });
 
     const [ translateAndTransitions, setTranslateAndTransitions ] = useState({
         activeIndex: 0,
         translate: 0,
-        transition: 1,
+        transition: 0,
     });
     
     const { activeIndex, translate, transition, } = translateAndTransitions;
@@ -117,13 +78,21 @@ function Carroussel({images, arrows = true, autoPlay }) {
         >
             {
                 imagesList.map((img,index )=>( 
-                    <Slide key={ index } content={img} />
+                    <Slide key={ `${index}_${key()}` } content={img} />
                 ))
                    
             }
         </ContentCarroussel>
-        <Arrow direction={"right"} handleClick={prevSlide} arrows={ arrows }/>
-        <Arrow direction={"left"} handleClick={nextSlide} arrows={ arrows } />
+        <Arrows 
+            direction={"right"}
+             handleClick={prevSlide} 
+             arrow ={ arrow }
+        />
+        <Arrows 
+            direction={"left"}
+             handleClick={nextSlide} 
+             arrow ={ arrow }
+         />
     </Container>
   )
 }

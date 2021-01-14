@@ -6,6 +6,7 @@ const GlobalStyle = createGlobalStyle`
         --c-font-mini-menus-header: #FADAA5;
         --background-global: #E5E5E5;
         --efeito--hover: #fff;
+        --background-itens-menu: #FADAA5
       }
     
     html, body, #root{
@@ -15,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
         outline: none;
         box-sizing: border-box;
         font-family: 'Roboto', sans-serif;
-        background: var(----background-global);
+        background: var(--background-global);
         //cores da page.
         
     }
