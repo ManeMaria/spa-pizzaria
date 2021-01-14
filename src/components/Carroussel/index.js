@@ -5,7 +5,7 @@ import Arrows from '../Arrows';
 
 
 
-function Carroussel({images, arrow, autoPlay }) {
+function Carroussel({images, arrow, autoPlay, display = true }) {
    
     const getWidth = () => window.innerWidth; // diz o tamanho da tela do cliente;
     const imagesList = [...images];
@@ -70,7 +70,7 @@ function Carroussel({images, arrow, autoPlay }) {
      };
 
   return(
-    <Container>
+    <Container display = { display ? 'block' : 'none' }>
         <ContentCarroussel  
             width = {getWidth() * imagesList.length}
             translate = {translate}

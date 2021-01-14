@@ -27,4 +27,7 @@ export const ContainerImputs  = styled.input`
         outline: none;
         transform: scaleY(1.1);
     }
+    @media (max-width: 900px){
+        height: 30%;
+    }
 `;

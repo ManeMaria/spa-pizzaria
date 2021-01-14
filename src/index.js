@@ -10,7 +10,7 @@ import imgMenu1 from './assets/images/menu-img1.png';
 import imgMenu2 from './assets/images/menu-img2.png';
 import imgMenu3 from './assets/images/menu-img3.png';
 import imgMenu4 from './assets/images/menu-img4.png';
-
+import imgMenu5 from './assets/images/menu-img5.png';
 
 const IMAGES_OF_CARROUSSEL = [
      imgCar1,
@@ -67,9 +67,9 @@ const CARDAPIO = [
           ]
     },
     {
-        id: 1,
+        id: 5,
         tipoDoPrato: 'bebidas',
-        image: `${imgMenu3}`,
+        image: `${imgMenu5}`,
         pratos: [
             {
               id: '4_1' ,

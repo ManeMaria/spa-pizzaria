@@ -19,6 +19,10 @@ export const Container = styled.header`
         height: 100px;
     }
 
+    @media ( max-width: 900px ){
+        display: none;
+    }
+
 `;
 export const NavMenu = styled.div`
    display: flex;
@@ -47,6 +51,8 @@ export const NavMenu = styled.div`
         }
         
     }
+
+    
    
 `;
 export const AnchorSections = styled.a`

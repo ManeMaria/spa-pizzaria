@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-
+import 'react-toastify/dist/ReactToastify.css';
 const GlobalStyle = createGlobalStyle`
       :root{
         --c-header: #D95204;
@@ -10,7 +10,6 @@ const GlobalStyle = createGlobalStyle`
       }
     
     html, body, #root{
-        
         margin: 0;
         padding: 0;
         outline: none;

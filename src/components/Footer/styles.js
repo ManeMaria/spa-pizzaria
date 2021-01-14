@@ -10,6 +10,7 @@ export const Container = styled.footer`
         width: 100px;
         height: 100px;
     }
+
 `;
 export const Contente = styled.div`
     margin: auto 0;

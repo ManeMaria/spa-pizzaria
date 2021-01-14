@@ -6,7 +6,8 @@ import Arrows from '../Arrows';
 
 function Cardapio({cardapio}) {
     const cardapioList = [...cardapio];
-    const key = ()=> nanoid();
+    const key = () => nanoid();
+    const getWidth = () => window.innerWidth;
     const [ translateAndTransitions, setTranslateAndTransitions ] = useState({
         activeIndex: 0,
         translate: 0,
@@ -15,19 +16,19 @@ function Cardapio({cardapio}) {
     
     const { activeIndex, translate, transition} = translateAndTransitions;
     //guardei no state e separei para ficar mais legível;
-   
+
     const prevSlide = () => { 
         if(activeIndex === 0 ){
             return setTranslateAndTransitions({
                 ...translateAndTransitions,
-                translate: (cardapioList.length - 1) * 180,
+                translate: (cardapioList.length - 1) * 100,
                activeIndex: cardapioList.length -1,     
             })
         };
 
         setTranslateAndTransitions({
             ...translateAndTransitions,
-            translate: (activeIndex - 1) * 180,
+            translate: (activeIndex - 1) * 100,
             activeIndex: activeIndex -1,     
         })
         
@@ -44,7 +45,7 @@ function Cardapio({cardapio}) {
         setTranslateAndTransitions({
             ...translateAndTransitions,
            activeIndex: activeIndex + 1,
-            translate: (activeIndex + 1) * 180,
+            translate: (activeIndex + 1) * 100,
         })
      };
     
@@ -56,9 +57,9 @@ function Cardapio({cardapio}) {
     >
        
             {cardapioList.map( item =>(
-                <ContentItens 
+                <ContentItens  
                     key = {`${item.id}_${key()}`}
-                    
+                    className = {`content-${item.id}`}
                 >
                    <Images src= {item.image} alt= 'cardapio do dia'/>
                     <button type = 'button'>
@@ -68,15 +69,17 @@ function Cardapio({cardapio}) {
             ))}
         
     </Content>
-    <Arrows 
+        <Arrows 
             direction={"right"}
              handleClick={prevSlide}
              top = {35}
+             arrow = {!(getWidth() <= 900)}
          />
         <Arrows 
             direction={"left"} 
             handleClick={nextSlide} 
             top = {35}
+            arrow = {!(getWidth() <= 900)}
          />
    </Container>
   )

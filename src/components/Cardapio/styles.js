@@ -4,17 +4,26 @@ export  const Container = styled.div `
   height: 60vh;
   margin: 20vh auto;
   position: relative;
+  @media (max-width: 900px){
+    margin: 5vh auto;
+  }
 `;
 export const Content = styled.div`
   width: 100%;
   height: 100%;
-    margin: 0 auto;
-    display: flex;
+  margin: 0 auto;
+  display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   overflow: hidden;
   transform: translateX(-${props => props.translate}px);
-    transition: transform ease-out ${props => props.transition}s;
+  transition: transform ease-out ${props => props.transition}s;
+  @media (max-width: 900px){
+    display: inline-block;
+    grid-template-columns: 1fr;
+    overflow-y: scroll;
+  }
+  
 `; 
 export const ContentItens = styled.div`
     display: flex;
@@ -45,7 +54,11 @@ export const ContentItens = styled.div`
           }
           transform: scale(1.1);
         }
-      }
+    }
+    @media (max-width: 900px){
+      width: 100%;
+      
+    }
 `;
 export const Images = styled.img`
     background: var(--background-itens-menu);

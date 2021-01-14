@@ -1,11 +1,17 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+    display: ${props => props.display};
     height: 70vh;
     width: 98.5vw;
-    margin: 5vh auto;
+    margin: 1vh auto;
     overflow: hidden; //o mais importante
     position: relative;
+
+    @media (max-width: 900px){
+        height: 30vh;
+        width: 100vw;
+    }
 
 `;
 
@@ -22,7 +28,7 @@ export const Slide = styled.div`
    width: 100%;
    
    background-image: url(${props => props.content});
-   background-size: cover;
+   background-size: 100%;
    background-repeat: no-repeat;
    background-position: center; 
    
