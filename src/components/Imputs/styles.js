@@ -23,6 +23,7 @@ export const ContainerImputs  = styled.input`
     border: none;
     border-radius: 10px;
     transition: all 0.2s;
+    font-size: 1.5em;
     &:focus{
         outline: none;
         transform: scaleY(1.1);

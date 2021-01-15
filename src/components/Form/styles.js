@@ -8,7 +8,7 @@ export const ContainerForm = styled.div`
         display: flex;
         justify-content: center;
         flex-direction: column;
-        margin: 2% 0;
+        margin: 1% 0;
     h1{
         align-self: center;
     }
@@ -23,7 +23,7 @@ export const ContainerForm = styled.div`
     button{
         background: var(--c-header);
         display: flex;
-        flex-wrap: wrap;
+        //flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         margin: 2% auto;
@@ -34,7 +34,7 @@ export const ContainerForm = styled.div`
         transition: all 0.2s;
         
         p{
-            font-size: 1em;
+            font-size: 1.5em;
             color: var(--c-font-mini-menus-header)
         }
         &:hover, :focus{
