@@ -6,6 +6,7 @@ export  const Container = styled.div `
   position: relative;
   @media (max-width: 900px){
     margin: 5vh auto;
+    width: 100vw;
   }
 `;
 export const Content = styled.div`
@@ -22,6 +23,7 @@ export const Content = styled.div`
     display: inline-block;
     grid-template-columns: 1fr;
     overflow-y: scroll;
+    //margin: 2% auto;
   }
   
 `; 
@@ -31,7 +33,7 @@ export const ContentItens = styled.div`
     align-items: center;
     width: 100%;
     height: 100%;
-    margin: 0 1%;
+    margin: 1%;
     border-radius: 25px;
     button{
       background: var(--c-header);
@@ -57,12 +59,17 @@ export const ContentItens = styled.div`
     }
     @media (max-width: 900px){
       width: 100%;
-      
+      margin: 5vh 0;
     }
 `;
 export const Images = styled.img`
     background: var(--background-itens-menu);
-    height: 85%;
+    height: 100%;
     width:  100%;
     border-radius: 25px;
+    @media (max-width: 900px){
+      width: 80vw;
+      
+    }
+
 `;

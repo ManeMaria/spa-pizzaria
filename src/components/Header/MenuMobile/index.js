@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Animation from './Animation';
-import { ContainerMenuMobile, ContentMenu, AnchorSections } from './styles';
+import { ContainerMenuMobile, ContentMenu, AnchorSections} from './styles'; //, AnchorSections
 function MenuMobile() {
 
     const [ animation, setAnimation ] = useState(false)
@@ -12,15 +12,29 @@ function MenuMobile() {
         setAnimation(animationOnOff)
     }   
 
-   
+   /**
+    * 
+    * 
+    *  <AnchorSections>
+            <p>PROMOÇÕES</p>
+        </AnchorSections>
+        <AnchorSections>
+            <p>LOCALIZAÇÃO</p>
+        </AnchorSections>
+        <AnchorSections>
+            <p>CADASTRAR</p>
+        </AnchorSections>
+       
+    */
   return (
    <ContainerMenuMobile>
-        <ContentMenu id = 'menu'> 
-            <button type='button' onClick={(e)  => openAndCloseMenu(e)}>
+      
+    <ContentMenu id = 'menu' > 
+        <button type='button' onClick={(e)  => openAndCloseMenu(e)}>
                 <Animation checked={animation} />
             </button>
         {/*apesar de saber que os estilos de componentes não precisa de ids, inclui neste, pois achei mais fácil para terceiros lerem. */}
-
+       
         <AnchorSections>
             <p>PROMOÇÕES</p>
         </AnchorSections>
@@ -30,7 +44,9 @@ function MenuMobile() {
         <AnchorSections>
             <p>CADASTRAR</p>
         </AnchorSections>
-        </ContentMenu> 
+      
+    </ContentMenu> 
+       
    </ContainerMenuMobile>
   );
 }
