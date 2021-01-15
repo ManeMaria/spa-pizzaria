@@ -23,7 +23,6 @@ export const ContainerForm = styled.div`
     button{
         background: var(--c-header);
         display: flex;
-        //flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         margin: 2% auto;
