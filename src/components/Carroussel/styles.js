@@ -9,6 +9,7 @@ export const Container = styled.div`
     position: relative;
 
     @media (max-width: 900px){
+        margin-top: -7vw;
         height: 30vh;
         width: 100vw;
     }

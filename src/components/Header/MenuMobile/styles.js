@@ -7,10 +7,6 @@ export const ContainerMenuMobile = styled.div `
     position: relative;
     width: 0vw;
    
-   /*
-   
-    height: 100vh;
-    */
   }
    
 `;
@@ -41,8 +37,8 @@ export const ContentMenu = styled.div`
       }
     
     > button{
-        height: 60px;
-        width: 60px;
+        height: 50px;
+        width: 50px;
         left: 100%;
         top: 2%;
         z-index: 1;

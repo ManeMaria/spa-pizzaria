@@ -7,6 +7,7 @@ export  const Container = styled.div `
   @media (max-width: 900px){
     margin: 5vh auto;
     width: 100vw;
+    overflow-x: scroll;
   }
 `;
 export const Content = styled.div`
@@ -20,9 +21,10 @@ export const Content = styled.div`
   transform: translateX(-${props => props.translate}px);
   transition: transform ease-out ${props => props.transition}s;
   @media (max-width: 900px){
-    display: inline-block;
-    grid-template-columns: 1fr;
-    overflow-y: scroll;
+    //display: flex;
+    width: 350vw;
+    //overflow: none;
+    //overflow-x: scroll;
     //margin: 2% auto;
   }
   
@@ -59,7 +61,12 @@ export const ContentItens = styled.div`
     }
     @media (max-width: 900px){
       width: 100%;
-      margin: 5vh 0;
+      margin: 0 3vw;
+
+      button:focus{
+        outline: none;
+        transform: scale(1.5,1.5);
+      }
     }
 `;
 export const Images = styled.img`
@@ -68,8 +75,8 @@ export const Images = styled.img`
     width:  100%;
     border-radius: 25px;
     @media (max-width: 900px){
-      width: 80vw;
-      
+      height: 40vh;
+      width: 60vw;
     }
 
 `;

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    width: 50px;
-    height: 50px;     
+    width: 40px;
+    height: 40px;     
     position: relative;
     z-index: -1;
    
@@ -13,10 +13,10 @@ export const Container = styled.div`
             background-color: transparent;
         }
         &:checked ~ span:before {
-           transform: translate(0px, -20px) rotate(-45deg);
+           transform: translate(0px, -18px) rotate(-45deg);
         }
         &:checked ~ span:after {
-           transform: translate(0px, 20px) rotate(45deg);
+           transform: translate(0px, 18px) rotate(45deg);
         }
     }
     
@@ -36,9 +36,9 @@ export const Container = styled.div`
        
         opacity: 1;
         position: absolute;
-        top: 22px;
-        width: 50px;
-        height: 8px;
+        top: 17px;
+        width: 40px;
+        height: 7px;
         transition: all 0.3s;
         background: #fff;
         left: 0px;
@@ -46,9 +46,9 @@ export const Container = styled.div`
         &:before{
             content: ' ';
             position: absolute;
-            bottom: -20px;
-            width: 50px;
-            height: 8px;
+            bottom: -18px;
+            width: 40px;
+            height: 7px;
             transition: all 0.3s;
             background: #fff;
             left: 0px;
@@ -57,9 +57,9 @@ export const Container = styled.div`
         &:after{
             content: ' ';
             position: absolute;
-            top: -20px;
-            width: 50px;
-            height: 8px;
+            top: -18px;
+            width: 40px;
+            height: 7px;
             transition: all 0.3s;
             background: #fff;
             left: 0px;
