@@ -26,7 +26,7 @@ export const ContentMenu = styled.div`
       z-index: 1;
       transition: all 0.3s;
       background: var(--background-itens-menu);
-      transform: translateX(0%);
+      transform: translateX(-100%);
     
     &.open {
         display: block;
@@ -37,7 +37,7 @@ export const ContentMenu = styled.div`
         left: 0;
         top: 0;
         z-index: 1;
-        transform: translateX(-100%);
+        transform: translateX(0%);
       }
     
     > button{
