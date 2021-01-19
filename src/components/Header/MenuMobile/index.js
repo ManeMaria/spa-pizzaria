@@ -40,7 +40,7 @@ function MenuMobile() {
     })
   return (
    <ContainerMenuMobile>
-      s
+
     <ContentMenu id = 'menu' ref={ref}> 
         <button type='button' onClick={(e)  => openAndCloseMenu(e)}>
                 <Animation checked={animation} />

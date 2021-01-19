@@ -2,10 +2,10 @@ import styled from 'styled-components';
 export  const Container = styled.div `
   width: 100vw;
   height: 60vh;
-  margin: 20vh auto;
+  margin: 10vh auto;
   position: relative;
   @media (max-width: 900px){
-    margin: 5vh auto;
+    margin: 2vh auto;
     width: 100vw;
     overflow-x: scroll;
   }
@@ -34,7 +34,7 @@ export const ContentItens = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 100%;
+    height: 70%;
     margin: 1%;
     border-radius: 25px;
     button{
@@ -60,9 +60,10 @@ export const ContentItens = styled.div`
         }
     }
     @media (max-width: 900px){
+      height: 100%;
       width: 100%;
       margin: 0 3vw;
-
+    
       button:focus{
         outline: none;
         transform: scale(1.5,1.5);
