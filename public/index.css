@@ -1,5 +1,5 @@
 
-@media (min-width: 400px) and (max-width: 700px){
+
     html, body{
         width: 100vw;
         height: 100vh;
@@ -9,7 +9,20 @@
         outline: none;
         background-color: #FBB040;
     }
-    
+    @media (min-width: 550px){
+        .superior-art{
+            display: none;
+        }
+        .bottom-art{
+            display: none;
+        }
+        .complement-of-superior-art{
+            display: none;
+        }
+        .complement-of-bottom-art{
+            display: none;
+        }
+    }
     .dad{
         width: 100%;
         height: 100vh;
@@ -47,6 +60,7 @@
         position: absolute;
         top: 0;
         left: 0;
+        
     }
     .bottom-art{ /* art inferior*/
         background-image: url("art-inferior.svg");
@@ -112,4 +126,3 @@
         height: 130px;
     }
       
-}
