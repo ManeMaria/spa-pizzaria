@@ -6,9 +6,9 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Carroussel from './components/Carroussel'; 
 import Cardapio from './components/Cardapio';  
-import MenuMobileHeader from './components/Header/MenuMobile';
 import Form from './components/Form';
 import Location from './components/Location';
+import MobileHeader from './components/MenuMobile/MobileHeader';
 
 const Div = styled.div`
      width: 100vw;
@@ -41,16 +41,9 @@ function App({images, cardapio}) {
           <ToastContainer />
 
           <Header />
-          <MenuMobileHeader />
-
+          {getWidth() < 550? <MobileHeader />: false}
           <Carroussel images = {images} arrow = {false}  autoPlay = {3.5}/>
-          <Cardapio cardapio = { cardapio }/>
-          <Carroussel 
-               display = {!(getWidth() <= 900)} 
-               images = {images}
-               arrow = {false}
-               autoPlay = {3.5}
-          />
+          <Cardapio cardapio = {cardapio}/>
           {/**procurar outra solução */}
           <Div>
                <Form />
@@ -58,7 +51,6 @@ function App({images, cardapio}) {
           </Div>
           
           <Footer />
-
      </>
     );
 }

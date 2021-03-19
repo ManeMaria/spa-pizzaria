@@ -5,9 +5,7 @@ export  const Container = styled.div `
   margin: 10vh auto;
   position: relative;
   @media (max-width: 900px){
-    margin: 2vh auto;
-    width: 100vw;
-    overflow-x: scroll;
+    display: none;
   }
 `;
 export const Content = styled.div`

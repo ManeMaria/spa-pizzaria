@@ -4,9 +4,11 @@ const GlobalStyle = createGlobalStyle`
       :root{
         --c-header: #D95204;
         --c-font-mini-menus-header: #FADAA5;
-        --background-global: #E5E5E5;
+        --background-global: #FBB040;
         --efeito--hover: #fff;
-        --background-itens-menu: #FADAA5
+        --background-itens-menu: #FADAA5;
+        --menu-color: #FED496;
+
       }
     
     html, body, #root{
@@ -18,6 +20,10 @@ const GlobalStyle = createGlobalStyle`
         background: var(--background-global);
         //cores da page.
         
+    }
+
+    body{
+        position: relative;
     }
 
     input, button {

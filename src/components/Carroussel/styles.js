@@ -7,12 +7,9 @@ export const Container = styled.div`
     margin: 1vh auto;
     overflow: hidden; //o mais importante
     position: relative;
-
     @media (max-width: 900px){
-        margin-top: -7vw;
-        height: 30vh;
-        width: 100vw;
-    }
+        display: none;
+    } 
 
 `;
 

@@ -45,7 +45,7 @@ function Carroussel({images, arrow, autoPlay, display = true }) {
                 translate: (imagesList.length - 1) * getWidth(),
                activeIndex: imagesList.length -1,     
             })
-        };
+        }
 
         setTranslateAndTransitions({
             ...translateAndTransitions,
@@ -60,7 +60,7 @@ function Carroussel({images, arrow, autoPlay, display = true }) {
                 translate: 0,
                activeIndex: 0,
             })
-        };
+        }
 
         setTranslateAndTransitions({
             ...translateAndTransitions,

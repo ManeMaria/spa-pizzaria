@@ -6,15 +6,13 @@ export const Container = styled.footer`
     background: var(--c-header);
     display: flex;
     align-items: center;
+    
     img{
         width: 100px;
         height: 100px;
     }
     @media ( max-width: 900px ){
-        img{
-            width: 60px;
-            height: 60px;
-        }
+      display: none;
     }
 
     

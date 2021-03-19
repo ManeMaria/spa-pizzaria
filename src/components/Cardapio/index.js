@@ -24,7 +24,7 @@ function Cardapio({cardapio}) {
                 translate: (cardapioList.length - 1) * 100,
                activeIndex: cardapioList.length -1,     
             })
-        };
+        }
 
         setTranslateAndTransitions({
             ...translateAndTransitions,
@@ -40,7 +40,7 @@ function Cardapio({cardapio}) {
                 translate: 0,
                activeIndex: 0,
             })
-        };
+        }
 
         setTranslateAndTransitions({
             ...translateAndTransitions,

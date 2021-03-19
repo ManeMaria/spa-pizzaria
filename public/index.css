@@ -1,30 +1,115 @@
 
-body{
-    width: 100%;
-    height: 100%;
-}
-
-.dad{
-    width: 100%;
-    height: 100vh;
-    margin: auto;
-    padding: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-.spin {
-    border: 7px solid #666;
-    width: 50px;
-    height: 50px;
-    border-top: 7px solid #D95204;
-    border-radius: 50%;
-    animation: spin 0.5s linear infinite;
-  }
-  @keyframes spin{
+@media (min-width: 400px) and (max-width: 700px){
+    html, body{
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        outline: none;
+        background-color: #FBB040;
+    }
     
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+    .dad{
+        width: 100%;
+        height: 100vh;
+        margin: auto;
+        padding: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative ;
     
-  }
+    }
+    .spin {
+        background: url("logo-loading.svg");/* AJEITAR AQUI*/
+        width: 148px;
+        height: 148px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        animation: spin 2.5s linear infinite;
+    }
+    @keyframes spin{
+        
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+        
+    } 
+    
+    .superior-art{ /* art superior*/
+        background-image: url("art-superior.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 100vw;
+        height: 35vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .bottom-art{ /* art inferior*/
+        background-image: url("art-inferior.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 100vw;
+        height: 55vh;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    .complement-of-superior-art{ /* os complementos da arte superior*/
+        background-image: url("art-superior-complemento.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 125px;
+        height: 125px;
+    }
+    
+    .complement-of-bottom-art{ /* os complementos da arte inferior*/
+        background-image: url("complemento-1.svg");
+        background-repeat: no-repeat;
+        background-position: center left;
+        background-size: cover;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 200px;
+        height: 200px;
+        z-index: 1;
+    }
+    
+    .complement-of-bottom-art::after{ /* os complementos da arte inferior*/
+        content: "";
+        background-image: url("complemento-2.svg");
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: contain;
+        position: absolute;
+        bottom: 0%;
+        left: 35%;
+        width: 190px;
+        height: 190px;
+        align-self: end;
+        
+    }
+    
+    .complement-of-bottom-art::before{ /* os complementos da arte superior*/
+        content: "";
+        background-image: url("complemento-3.svg");
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: contain;
+        position: absolute;
+        bottom: 0;
+        left: 25%;
+        width: 130px;
+        height: 130px;
+    }
+      
+}

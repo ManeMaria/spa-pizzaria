@@ -26,5 +26,5 @@ function Location() {
        
       </Container>
   )
-};
+}
 export default  Location;
