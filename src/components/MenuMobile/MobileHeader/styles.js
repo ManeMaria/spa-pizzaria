@@ -12,8 +12,8 @@ export const Container = styled.div`
     height: 20vh;
 `;
 export const Content = styled.div`
-    width: 100%;
-    height: 100%;
+    width: 400px;
+    height: 175px;
     background-image: url(${menuArt});
     background-repeat: no-repeat;
     background-size: contain;
@@ -23,8 +23,8 @@ export const Content = styled.div`
 
 `;
 export const UserImage = styled.div`
-    width: 18%;
-    height: 48%;
+    width: 68px;
+    height: 68px;
     background-color: var(--menu-color);
     background-image: url(${userImage});
     background-repeat: no-repeat;
@@ -32,8 +32,8 @@ export const UserImage = styled.div`
     background-position: center;
     border-radius: 50%;
     position: absolute;
-    top: 13.5%;
-    left: 5.5%; 
+    top: 12%;
+    left: 6%; 
     
 
 `;
